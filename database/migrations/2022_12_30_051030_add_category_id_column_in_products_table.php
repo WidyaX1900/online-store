@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id'); 
+            $table->unsignedBigInteger('category_id')->after('cost'); 
             $table->foreign('category_id')->references('id')->on('categories');
         });
     }
