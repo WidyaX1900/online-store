@@ -160,6 +160,7 @@ nav .navigation .logout-container button:active {
   background-color: #383434;
   color: #f4f4f4;
   border-radius: 4px;
+  border: none;
   font-size: 1.2rem;
   transition: 0.3s;
 }

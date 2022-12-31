@@ -62,6 +62,20 @@
     </aside>
     <section class="items mx-auto d-flex flex-column">
         <div class="container content">
+            @if (session()->has('status'))
+                <div class="alert alert-success">
+                    <strong>{{ session()->get('result') }}</strong> {{ session()->get('action') }}
+                </div>
+            @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>                
+            @endif
             <h1>Product List</h1>
             <div class="col-lg-6 mt-3">
                 <form action="" method="get">
@@ -100,168 +114,35 @@
                 </div>
             </div>
             <div class="goods mt-4 d-flex flex-wrap justify-content-between">
-                <div class="good-list border rounded shadow p-2">
-                    <img src="{{ asset('storage/img/jacket.jpg') }}" alt="Jacket">
-                    <p class="mt-2">Black Coat Jacket</p>
-                    <h4>Rp 90.000</h4>
-                    <div class="cta-buttons mt-3">
-                        <button class="btn btn-info position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                info
-                            </span>
-                            Product Info
-                        </button>
-                    </div>
-                    <div class="cta-buttons mt-3 d-flex justify-content-between">
-                        <button class="btn btn-warning position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                edit
-                            </span>
-                            Edit
-                        </button>
-                        <button class="btn btn-danger position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                delete
-                            </span>
-                            Delete
-                        </button>
-                    </div>
-                </div>
-                <div class="good-list border rounded shadow p-2">
-                    <img src="{{ asset('storage/img/jacket.jpg') }}" alt="Jacket">
-                    <p class="mt-2">Black Coat Jacket</p>
-                    <h4>Rp 90.000</h4>
-                    <div class="cta-buttons mt-3">
-                        <button class="btn btn-info position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                info
-                            </span>
-                            Product Info
-                        </button>
-                    </div>
-                    <div class="cta-buttons mt-3 d-flex justify-content-between">
-                        <button class="btn btn-warning position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                edit
-                            </span>
-                            Edit
-                        </button>
-                        <button class="btn btn-danger position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                delete
-                            </span>
-                            Delete
-                        </button>
-                    </div>
-                </div>
-                <div class="good-list border rounded shadow p-2">
-                    <img src="{{ asset('storage/img/jacket.jpg') }}" alt="Jacket">
-                    <p class="mt-2">Black Coat Jacket</p>
-                    <h4>Rp 90.000</h4>
-                    <div class="cta-buttons mt-3">
-                        <button class="btn btn-info position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                info
-                            </span>
-                            Product Info
-                        </button>
-                    </div>
-                    <div class="cta-buttons mt-3 d-flex justify-content-between">
-                        <button class="btn btn-warning position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                edit
-                            </span>
-                            Edit
-                        </button>
-                        <button class="btn btn-danger position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                delete
-                            </span>
-                            Delete
-                        </button>
-                    </div>
-                </div>
-                <div class="good-list border rounded shadow p-2 mt-4">
-                    <img src="{{ asset('storage/img/jacket.jpg') }}" alt="Jacket">
-                    <p class="mt-2">Black Coat Jacket</p>
-                    <h4>Rp 90.000</h4>
-                    <div class="cta-buttons mt-3">
-                        <button class="btn btn-info position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                info
-                            </span>
-                            Product Info
-                        </button>
-                    </div>
-                    <div class="cta-buttons mt-3 d-flex justify-content-between">
-                        <button class="btn btn-warning position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                edit
-                            </span>
-                            Edit
-                        </button>
-                        <button class="btn btn-danger position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                delete
-                            </span>
-                            Delete
-                        </button>
-                    </div>
-                </div>
-                <div class="good-list border rounded shadow p-2 mt-4">
-                    <img src="{{ asset('storage/img/jacket.jpg') }}" alt="Jacket">
-                    <p class="mt-2">Black Coat Jacket</p>
-                    <h4>Rp 90.000</h4>
-                    <div class="cta-buttons mt-3">
-                        <button class="btn btn-info position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                info
-                            </span>
-                            Product Info
-                        </button>
-                    </div>
-                    <div class="cta-buttons mt-3 d-flex justify-content-between">
-                        <button class="btn btn-warning position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                edit
-                            </span>
-                            Edit
-                        </button>
-                        <button class="btn btn-danger position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                delete
-                            </span>
-                            Delete
-                        </button>
-                    </div>
-                </div>
-                <div class="good-list border rounded shadow p-2 mt-4">
-                    <img src="{{ asset('storage/img/jacket.jpg') }}" alt="Jacket">
-                    <p class="mt-2">Black Coat Jacket</p>
-                    <h4>Rp 90.000</h4>
-                    <div class="cta-buttons mt-3">
-                        <button class="btn btn-info position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                info
-                            </span>
-                            Product Info
-                        </button>
-                    </div>
-                    <div class="cta-buttons mt-3 d-flex justify-content-between">
-                        <button class="btn btn-warning position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                edit
-                            </span>
-                            Edit
-                        </button>
-                        <button class="btn btn-danger position-relative">
-                            <span class="material-symbols-outlined position-absolute top-5">
-                                delete
-                            </span>
-                            Delete
-                        </button>
-                    </div>
-                </div>
+                @foreach ($products as $product)
+                    <div class="good-list border rounded shadow p-2">
+                        <img src="{{ asset('storage/products/'.$product->photo) }}" alt="Jacket">
+                        <p class="mt-2">{{ $product->name }}</p>
+                        <h4>Rp {{ $product->cost }}</h4>
+                        <div class="cta-buttons mt-3">
+                            <button class="btn btn-info position-relative" data-id="{{ $product->id }}">
+                                <span class="material-symbols-outlined position-absolute top-5">
+                                    info
+                                </span>
+                                Product Info
+                            </button>
+                        </div>
+                        <div class="cta-buttons mt-3 d-flex justify-content-between">
+                            <button class="btn btn-warning position-relative" data-id="{{ $product->id }}">
+                                <span class="material-symbols-outlined position-absolute top-5">
+                                    edit
+                                </span>
+                                Edit
+                            </button>
+                            <button class="btn btn-danger position-relative" data-id="{{ $product->id }}">
+                                <span class="material-symbols-outlined position-absolute top-5">
+                                    delete
+                                </span>
+                                Delete
+                            </button>
+                        </div>
+                    </div>                    
+                @endforeach
             </div>
         </div>
         <!-- Modal -->
@@ -272,12 +153,40 @@
                         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                    ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                    <div id="product-form">
+                        <form action="/product/store" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Product Name</label>
+                                    <input type="text" class="form-control" id="name" name="name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cost" class="form-label">Cost</label>
+                                    <input type="text" class="form-control" id="cost" name="cost">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="category_id" class="form-label">Category</label>
+                                    <select class="form-select" aria-label="Default select example" name="category_id" id="category_id">
+                                        @foreach ($category as $categories)
+                                            <option value="{{ $categories->id }}">{{ $categories->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="qty" class="form-label">Qty</label>
+                                    <input type="number" class="form-control" id="qty" name="qty">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="photo" class="form-label">Product's Photo</label>
+                                    <input type="file" class="form-control" id="photo" name="photo">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Add Product</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

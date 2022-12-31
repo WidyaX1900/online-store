@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 // Product routes
 Route::get('/product', [ProductController::class, 'index']);
+Route::post('/product/store', [ProductController::class, 'store']);
