@@ -1,0 +1,8 @@
+.good-list{
+    transition: .3s all;
+    cursor: pointer;
+}
+
+.good-list:hover{
+    opacity: 50%;
+}

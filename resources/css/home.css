@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #F9F9F9;
+  position: fixed;
+  z-index: 4;
+}
+nav .brand-logo {
+  width: 20%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+nav .brand-logo img {
+  width: 100%;
+}
+nav .cta-buttons {
+  display: none;
+}
+nav .hamburger-icon {
+  width: 20%;
+  height: 55px;
+  border: 4px solid rgb(128, 128, 128);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 7px;
+  margin-top: 5px;
+}
+nav .hamburger-icon span {
+  width: 45px;
+  height: 6px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 3px;
+  transition: 0.3s all;
+}
+nav .hamburger-icon span:nth-child(1).icon-1 {
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+}
+nav .hamburger-icon span:nth-child(2).icon-2 {
+  transform: scale(0);
+  opacity: 0;
+}
+nav .hamburger-icon span:nth-child(3).icon-3 {
+  transform-origin: 3px 8px;
+  transform: rotate(-45deg);
+}
+
+.menu-link {
+  width: 100%;
+  height: 35vh;
+  background-color: #F9F9F9;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: 0.3s all;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+.menu-link .login-container a {
+  font-size: 1.4rem;
+}
+.menu-link .register-container {
+  width: 98%;
+  height: 60px;
+}
+.menu-link .register-container button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #383434;
+  color: #F9F9F9;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 4px;
+  box-shadow: 0 10px 15px rgba(56, 52, 52, 0.3);
+  transition: 0.3s all;
+}
+.menu-link .register-container button:hover {
+  background-color: #2b2828;
+}
+
+.slide {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero {
+  background: rgb(26, 26, 26);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("http://localhost/online-store/public/storage/img/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.hero .hero-caption {
+  width: 90%;
+  height: 80px;
+  color: rgb(243, 243, 243);
+  text-align: center;
+}
+.hero .hero-caption h1 {
+  line-height: 40px;
+}
+
+.our-product {
+  width: 98%;
+  margin: 10px auto 0 auto;
+}
+.our-product h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #383434;
+}
+.our-product .product:nth-child(2) {
+  height: 300px;
+  margin: 15px auto 0 auto;
+  border-radius: 4px;
+  background-color: #383434;
+  background-image: linear-gradient(rgba(18, 17, 17, 0), rgba(28, 27, 27, 0)), url("http://localhost/online-store/public/storage/img/jacket.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(247, 247, 247);
+  cursor: pointer;
+}
+.our-product .product:nth-child(2) p {
+  font-size: 1.8rem;
+  display: none;
+}
+.our-product .product:nth-child(2):hover {
+  background-image: linear-gradient(rgba(18, 17, 17, 0.062745098), rgba(18, 17, 17, 0.6470588235)), url("http://localhost/online-store/public/storage/img/jacket.jpg");
+}
+.our-product .product:nth-child(2):hover p {
+  display: block;
+}
+.our-product .product:nth-child(3) {
+  height: 300px;
+  margin: 15px auto 0 auto;
+  border-radius: 4px;
+  background-color: #383434;
+  background-image: linear-gradient(rgba(18, 17, 17, 0), rgba(28, 27, 27, 0)), url("http://localhost/online-store/public/storage/img/watch.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(247, 247, 247);
+  cursor: pointer;
+}
+.our-product .product:nth-child(3) p {
+  font-size: 1.8rem;
+  display: none;
+}
+.our-product .product:nth-child(3):hover {
+  background-image: linear-gradient(rgba(18, 17, 17, 0.062745098), rgba(18, 17, 17, 0.6470588235)), url("http://localhost/online-store/public/storage/img/watch.jpg");
+}
+.our-product .product:nth-child(3):hover p {
+  display: block;
+}
+.our-product .product:nth-child(4) {
+  height: 300px;
+  margin: 15px auto 0 auto;
+  border-radius: 4px;
+  background-color: #383434;
+  background-image: linear-gradient(rgba(18, 17, 17, 0), rgba(28, 27, 27, 0)), url("http://localhost/online-store/public/storage/img/parfume.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(247, 247, 247);
+  cursor: pointer;
+}
+.our-product .product:nth-child(4) p {
+  font-size: 1.8rem;
+  display: none;
+}
+.our-product .product:nth-child(4):hover {
+  background-image: linear-gradient(rgba(18, 17, 17, 0.062745098), rgba(18, 17, 17, 0.6470588235)), url("http://localhost/online-store/public/storage/img/parfume.jpg");
+}
+.our-product .product:nth-child(4):hover p {
+  display: block;
+}
+.our-product .product:nth-child(5) {
+  height: 300px;
+  margin: 15px auto 0 auto;
+  border-radius: 4px;
+  background-color: #383434;
+  background-image: linear-gradient(rgba(18, 17, 17, 0), rgba(28, 27, 27, 0)), url("http://localhost/online-store/public/storage/img/t-shirt.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(247, 247, 247);
+  cursor: pointer;
+}
+.our-product .product:nth-child(5) p {
+  font-size: 1.8rem;
+  display: none;
+}
+.our-product .product:nth-child(5):hover {
+  background-image: linear-gradient(rgba(18, 17, 17, 0.062745098), rgba(18, 17, 17, 0.6470588235)), url("http://localhost/online-store/public/storage/img/t-shirt.jpg");
+}
+.our-product .product:nth-child(5):hover p {
+  display: block;
+}
+
+.story {
+  width: 98%;
+  margin: 60px auto 0 auto;
+}
+.story h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #383434;
+}
+.story .story-img {
+  height: 300px;
+}
+.story .story-img img {
+  width: 100%;
+}
+.story .desc {
+  font-weight: 500;
+  margin-top: 30px;
+}
+.story .desc p {
+  font-size: 1.4rem;
+}
+
+.testimonial {
+  width: 98%;
+  margin: 50px auto 0 auto;
+}
+.testimonial h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #383434;
+}
+.testimonial .testi .sliders .testi-box .box {
+  width: 95%;
+  margin: 0 auto;
+  background-color: rgb(251, 251, 251);
+}
+.testimonial .testi .sliders .testi-box .box .profile {
+  width: 90%;
+  margin: 0 auto;
+}
+.testimonial .testi .sliders .testi-box .box .profile .profile-pic-1 {
+  width: 60px;
+  height: 60px;
+  background-image: url("http://localhost/online-store/public/storage/img/user1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.testimonial .testi .sliders .testi-box .box .profile .profile-pic-2 {
+  width: 60px;
+  height: 60px;
+  background-image: url("http://localhost/online-store/public/storage/img/user2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.testimonial .testi .sliders .testi-box .box .profile .profile-pic-3 {
+  width: 60px;
+  height: 60px;
+  background-image: url("http://localhost/online-store/public/storage/img/user3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+.testimonial .testi .sliders .testi-box .box .profile .username {
+  margin: 7px 0 0 5px;
+}
+.testimonial .testi .sliders .testi-box .box .profile .username h4 {
+  font-size: 1.3rem;
+}
+.testimonial .testi .sliders .testi-box .box .profile .username .star {
+  color: rgb(240, 206, 34);
+  font-weight: bold;
+}
+.testimonial .testi .sliders .testi-box .box .profile .username .rate {
+  font-size: 1.4rem;
+}
+.testimonial .testi .sliders .testi-box .box .word {
+  width: 90%;
+  margin: 8px auto 0 auto;
+}
+.testimonial .testi .sliders .testi-box .box .word p {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: rgb(129, 129, 129);
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  background-color: #383434;
+  color: rgb(246, 246, 246);
+}
+footer p {
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 600px) {
+  nav .brand-logo {
+    width: 10%;
+  }
+  nav .hamburger-icon {
+    width: 13%;
+  }
+  .hero .hero-caption {
+    width: 70%;
+  }
+  .hero .hero-caption h1 {
+    font-size: 2.8rem;
+    line-height: 60px;
+  }
+  .menu-link {
+    height: 30vh;
+  }
+  .menu-link .login-container a {
+    font-size: 1.8rem;
+  }
+  .menu-link .register-container {
+    height: 75px;
+  }
+  .menu-link .register-container button {
+    font-size: 1.8rem;
+  }
+  .our-product {
+    margin-top: 20px;
+  }
+  .our-product .product {
+    width: 45%;
+  }
+  .story {
+    margin-top: 70px;
+  }
+  .story .story-img {
+    margin-top: 20px;
+  }
+  .story .desc {
+    margin-top: 15px;
+  }
+  .testimonial .testi .sliders .testi-box .box .profile .profile-pic-1 {
+    width: 80px;
+    height: 80px;
+    background-image: url("http://localhost/online-store/public/storage/img/user1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+  .testimonial .testi .sliders .testi-box .box .profile .profile-pic-2 {
+    width: 80px;
+    height: 80px;
+    background-image: url("http://localhost/online-store/public/storage/img/user2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+  .testimonial .testi .sliders .testi-box .box .profile .profile-pic-3 {
+    width: 80px;
+    height: 80px;
+    background-image: url("http://localhost/online-store/public/storage/img/user3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+  }
+  .testimonial .testi .sliders .testi-box .box .profile .username {
+    margin: 7px 0 0 5px;
+  }
+  .testimonial .testi .sliders .testi-box .box .profile .username h4 {
+    font-size: 1.5rem;
+  }
+  .testimonial .testi .sliders .testi-box .box .profile .username .star {
+    color: rgb(240, 206, 34);
+    font-weight: bold;
+  }
+  .testimonial .testi .sliders .testi-box .box .profile .username .rate {
+    font-size: 1.8rem;
+  }
+  .testimonial .testi .sliders .testi-box .box .word p {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  nav .brand-logo {
+    width: 5%;
+  }
+  nav .hamburger-icon {
+    display: none;
+  }
+  nav .cta-buttons {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  nav .cta-buttons a {
+    font-size: 1.4rem;
+  }
+  nav .cta-buttons button {
+    font-size: 20px;
+    width: 9em;
+    height: 2.8em;
+    font-weight: bold;
+    border: none;
+    background-color: #535353;
+    color: #F9F9F9;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px rgba(83, 83, 83, 0.2);
+    transition: 0.3s all;
+  }
+  nav .cta-buttons button:hover {
+    background-color: #3a3a3a;
+  }
+  nav .cta-buttons button:active {
+    background-color: #6d6d6d;
+  }
+  .our-product .product {
+    width: 23%;
+  }
+  .our-product .product:nth-child(3) {
+    margin-top: 50px;
+  }
+  .our-product .product:nth-child(5) {
+    margin-top: 50px;
+  }
+  .story .story-img {
+    height: 80px;
+  }
+  .story .desc {
+    width: 45%;
+  }
+  .testimonial {
+    margin-top: 400px;
+  }
+  .testimonial .testi .sliders .testi-box .box {
+    width: 70%;
+    height: 300px;
+  }
+  footer p {
+    font-size: 1.8rem;
+  }
+}/*# sourceMappingURL=home.css.map */
