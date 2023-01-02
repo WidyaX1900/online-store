@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/bootstrap.css' }}" />
     <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/home.css' }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="{{ asset('storage/img/logo.png') }}">
   </head>
   <body>
     <!-- Navbar -->
