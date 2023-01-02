@@ -41,4 +41,9 @@ class ProductController extends Controller
 
         return redirect('/product');
     }
+
+    public function show(Product $product)
+    {
+        return view('product.info', ['product' => $product]);   
+    }
 }

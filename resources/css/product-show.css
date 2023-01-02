@@ -157,6 +157,7 @@ nav .navigation .logout-container button:active {
 }
 .info .product-desc {
   width: 780px;
+  margin-left: 20px;
 }
 .info .product-desc h2 {
   font-size: 2.5rem;
