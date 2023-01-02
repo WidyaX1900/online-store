@@ -1,65 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogue Page</title>
-    <link rel="icon" href="{{ asset('storage/img/logo.png') }}">
-    <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/bootstrap.css' }}">
-    <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/catalogue.css'}}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
-</head>
-<body>
-    <nav class="d-flex">
-        <div class="navigation d-flex justify-content-between align-items-center">
-            <div class="hamburger-icon d-flex flex-column align-items-center justify-content-evenly" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="logout-container d-flex justify-content-between align-items-center">
-                <a href="">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                </a>
-                <button type="button">Logout</button>
-            </div>
-        </div>
-    </nav>
-    <aside class="sidebar vh-100">
-        <div class="sidebar-menus">
-            <div class="logo">
-                <img src="{{ asset('storage/img/logo-white.png') }}" alt="brand logo" class="d-block mx-auto">
-            </div>
-            <div class="links mx-auto mt-3">
-                <a href="" class="text-decoration-none">
-                    <div class="product link mx-auto d-flex align-items-center">
-                        <span class="material-symbols-outlined">
-                            inventory_2
-                        </span>
-                        <div class="link-label">
-                            Product
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="text-decoration-none">
-                    <div class="transaction link mx-auto d-flex align-items-center">
-                        <span class="material-symbols-outlined">
-                            receipt_long
-                        </span>
-                        <div class="link-label">
-                            Transaction
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="close-button d-flex justify-content-center">
-            X
-        </div>
-    </aside>
+@extends('templates.layout')
+@section('header', 'Product')
+@section('style')
+    {{ config('app.url') . '/online-store/resources/css/catalogue.css' }}
+@endsection
+
+@section('content')
     <section class="items mx-auto d-flex flex-column">
         <div class="container content">
             @if (session()->has('status'))
@@ -74,13 +19,14 @@
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
-                </div>                
+                </div>
             @endif
             <h1>Product List</h1>
             <div class="col-lg-6 mt-3">
                 <form action="" method="get">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search product" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="text" class="form-control" placeholder="Search product"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
                             <span class="material-symbols-outlined">
                                 search
@@ -116,7 +62,7 @@
             <div class="goods mt-4 d-flex flex-wrap justify-content-between">
                 @foreach ($products as $product)
                     <div class="good-list border rounded shadow p-2">
-                        <img src="{{ asset('storage/products/'.$product->photo) }}" alt="Jacket">
+                        <img src="{{ asset('storage/products/' . $product->photo) }}" alt="Jacket">
                         <p class="mt-2">{{ $product->name }}</p>
                         <h4>Rp {{ $product->cost }}</h4>
                         <div class="cta-buttons mt-3">
@@ -141,7 +87,7 @@
                                 Delete
                             </button>
                         </div>
-                    </div>                    
+                    </div>
                 @endforeach
             </div>
         </div>
@@ -167,7 +113,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="category_id" class="form-label">Category</label>
-                                    <select class="form-select" aria-label="Default select example" name="category_id" id="category_id">
+                                    <select class="form-select" aria-label="Default select example" name="category_id"
+                                        id="category_id">
                                         @foreach ($category as $categories)
                                             <option value="{{ $categories->id }}">{{ $categories->name }}</option>
                                         @endforeach
@@ -183,7 +130,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Add Product</button>
                             </div>
                         </form>
@@ -192,8 +140,4 @@
             </div>
         </div>
     </section>
-</body>
-<script src="http://localhost/online-store/resources/js/catalogue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-</html>
+@endsection
