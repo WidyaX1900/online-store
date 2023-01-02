@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue Page</title>
-    <link rel="icon" href="img/logo.png">
-    <link rel="stylesheet" href="http://localhost/online-store/resources/css/bootstrap.css">
-    <link rel="stylesheet" href="http://localhost/online-store/resources/css/catalogue.css">
+    <link rel="icon" href="{{ asset('storage/img/logo.png') }}">
+    <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/bootstrap.css' }}">
+    <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/catalogue.css'}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 <body>
