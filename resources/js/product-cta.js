@@ -51,4 +51,11 @@ $(function(){
 
         });
     });
+
+    $('.delete-product').on('click', function(){
+
+        const id = $(this).data('id');
+        document.location.href = '/product/delete/' + id;
+
+    });
 });

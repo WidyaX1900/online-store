@@ -80,11 +80,11 @@
                                 </span>
                                 Edit
                             </button>
-                            <button class="btn btn-danger position-relative" data-id="{{ $product->id }}">
-                                <span class="material-symbols-outlined position-absolute top-5">
-                                    delete
-                                </span>
-                                Delete
+                                <button class="btn btn-danger position-relative delete-product" data-id="{{ $product->id }}">
+                                    <span class="material-symbols-outlined position-absolute top-5">
+                                        delete
+                                    </span>
+                                    Delete
                             </button>
                         </div>
                     </div>

@@ -91,4 +91,24 @@ class ProductController extends Controller
 
         return redirect('/product');
     }
+
+    public function delete(Product $product)
+    {
+        return view('product.confirm', ['product' => $product]);   
+    }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        Storage::disk('public')->delete('products/'.$product->photo);
+        
+        if($product){
+
+            session()->flash('status', 'success');
+            session()->flash('result', 'Successfull');
+            session()->flash('action', 'delete Data');
+        }
+
+        return redirect('/product');
+    }
 }
