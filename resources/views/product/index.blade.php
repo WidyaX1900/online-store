@@ -45,18 +45,23 @@
             </div>
             <div class="category mt-5">
                 <div class="d-flex justify-content-between">
-                    <div class="link-items">
-                        <a href="">JACKET</a>
-                    </div>
-                    <div class="link-items">
-                        <a href="">T-SHIRT</a>
-                    </div>
-                    <div class="link-items">
-                        <a href="">PARFUME</a>
-                    </div>
-                    <div class="link-items">
-                        <a href="">ACCESORIES</a>
-                    </div>
+                    @foreach ($category as $categories)
+                        <div class="link-items">
+                            @if ($categories->id === 1)
+                                <a href="/product">
+                                    @php
+                                        echo strtoupper($categories->name);
+                                    @endphp
+                                </a>
+                            @else
+                                <a href="/product?category={{ $categories->id }}">
+                                    @php
+                                        echo strtoupper($categories->name);
+                                    @endphp
+                                </a>
+                            @endif
+                        </div>                        
+                    @endforeach
                 </div>
             </div>
             <div class="goods mt-5 d-flex flex-wrap justify-content-between">

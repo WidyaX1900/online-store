@@ -11,10 +11,18 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $categories = "1";
+
+        if($request->category){
+
+            $categories = $request->category;
+        }
+
         $category = Category::get(['id', 'name']);
-        $products = Product::all();
+        $products = Product::where('category_id', $categories)
+                ->get();
 
         return view('product.index', ['category' => $category, 'products' => $products]);
     }
