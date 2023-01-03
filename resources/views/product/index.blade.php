@@ -23,10 +23,10 @@
             @endif
             <h1>Product List</h1>
             <div class="col-lg-6 mt-3">
-                <form action="" method="get">
+                <form action="/product/search" method="get">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Search product"
-                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                            aria-label="Recipient's username" aria-describedby="button-addon2" name="keyword">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
                             <span class="material-symbols-outlined">
                                 search

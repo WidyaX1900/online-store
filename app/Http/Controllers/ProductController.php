@@ -119,4 +119,21 @@ class ProductController extends Controller
 
         return redirect('/product');
     }
+
+    public function search(Request $request)
+    {
+        $categories = "1";
+
+        if($request->category){
+
+            $categories = $request->category;
+        }
+        
+        $category = Category::get(['id', 'name']);
+        $products = Product::where('name', 'LIKE', '%'.$request->keyword.'%')
+                ->orWhere('cost', 'LIKE', '%'.$request->keyword.'%')
+                ->get();
+
+        return view('product.index', ['category' => $category, 'products' => $products]);   
+    }
 }
