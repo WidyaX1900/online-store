@@ -36,7 +36,7 @@
                 </form>
             </div>
             <div class="add-product mt-4">
-                <button type="button" class="p-3 shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="p-3 shadow" data-bs-toggle="modal" data-bs-target="#exampleModal" id="add-product">
                     <span class="material-symbols-outlined">
                         add
                     </span>
@@ -59,14 +59,14 @@
                     </div>
                 </div>
             </div>
-            <div class="goods mt-4 d-flex flex-wrap justify-content-between">
+            <div class="goods mt-5 d-flex flex-wrap justify-content-between">
                 @foreach ($products as $product)
                     <div class="good-list border rounded shadow p-2">
                         <img src="{{ asset('storage/products/' . $product->photo) }}" alt="Jacket">
                         <p class="mt-2">{{ $product->name }}</p>
                         <h4>Rp {{ $product->cost }}</h4>
                         <div class="cta-buttons mt-3">
-                            <button class="btn btn-info position-relative" data-id="{{ $product->id }}">
+                            <button class="btn btn-info position-relative info-product" data-id="{{ $product->id }}">
                                 <span class="material-symbols-outlined position-absolute top-5">
                                     info
                                 </span>
@@ -74,7 +74,7 @@
                             </button>
                         </div>
                         <div class="cta-buttons mt-3 d-flex justify-content-between">
-                            <button class="btn btn-warning position-relative" data-id="{{ $product->id }}">
+                            <button class="btn btn-warning position-relative edit-product" data-id="{{ $product->id }}" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 <span class="material-symbols-outlined position-absolute top-5">
                                     edit
                                 </span>
@@ -96,12 +96,13 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <h1 class="modal-title fs-5" id="modalLabel">Add Product</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div id="product-form">
                         <form action="/product/store" method="post" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="oldFile" id="oldFile">
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Product Name</label>
@@ -132,7 +133,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary"
                                     data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Add Product</button>
+                                <button type="submit" class="btn btn-primary action-btn">Add Product</button>
                             </div>
                         </form>
                     </div>
