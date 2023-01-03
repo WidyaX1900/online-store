@@ -123,15 +123,21 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $categories = "1";
+        $keyword = $request->keyword;
 
         if($request->category){
 
             $categories = $request->category;
         }
         
+        if($keyword === null){
+
+            return redirect('/product');
+        }
+        
         $category = Category::get(['id', 'name']);
-        $products = Product::where('name', 'LIKE', '%'.$request->keyword.'%')
-                ->orWhere('cost', 'LIKE', '%'.$request->keyword.'%')
+        $products = Product::where('name', 'LIKE', '%'.$keyword.'%')
+                ->orWhere('cost', 'LIKE', '%'.$keyword.'%')
                 ->get();
 
         return view('product.index', ['category' => $category, 'products' => $products]);   
