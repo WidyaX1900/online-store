@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,10 +29,13 @@ Route::middleware('auth')->group(function(){
     Route::get('/product/delete/{product}', [ProductController::class, 'delete']);
     Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy']);
     Route::get('/product/search', [ProductController::class, 'search']);
-    
+
 });
 
 // Auth routes
-Route::get('/login', function(){
-    return view('auth.login');
-})->name('login');
+Route::middleware('guest')->group(function(){
+    Route::get('/login', function(){
+        return view('auth.login');
+    })->name('login');
+    Route::post('/login/admin', [LoginController::class, 'admin']);
+});

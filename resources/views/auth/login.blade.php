@@ -15,11 +15,19 @@
             <div class="logo mx-auto">
                 <img src="{{ asset('storage/img/logo.png') }}" alt="brand logo">
             </div>
-            <form action="" method="" class="d-flex flex-column mt-4">
+            <form action="/login/admin" method="post" class="d-flex flex-column mt-4">
+                @csrf
                 <div class="mb-4">
                   <label for="email" class="form-label">Email address  </label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" autocomplete="off">
                 </div>
+                @if ($errors->any())
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-danger">{{ $error }}</li>    
+                        @endforeach
+                    </ul>
+                @endif
                 <div class="mb-4">
                   <label for="password" class="form-label">Password</label>
                   <input type="password" class="form-control" id="password" name="password">
