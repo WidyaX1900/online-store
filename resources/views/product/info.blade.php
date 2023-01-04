@@ -13,7 +13,12 @@
             <div class="product-desc">
                 <h2>{{ $product->name }}</h2>
                 <p>Rp {{ $product->cost }}</p>
-                <p>Category: Jacket</p>
+                <p>
+                    Category:
+                    @php
+                        echo ucwords($product->category->name);
+                    @endphp
+                </p>
                 <p>Stock: {{ $product->qty }}</p>
                 <p>
                     <strong>Purchase amount</strong>

@@ -52,8 +52,10 @@ class ProductController extends Controller
         return redirect('/product');
     }
 
-    public function show(Product $product)
+    public function show($id)
     {
+        $product = Product::with('category')->findOrFail($id);
+        
         return view('product.info', ['product' => $product]);   
     }
 
