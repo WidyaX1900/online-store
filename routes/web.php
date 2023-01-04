@@ -18,12 +18,20 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Product routes
-Route::get('/product', [ProductController::class, 'index']);
-Route::post('/product/store', [ProductController::class, 'store']);
-Route::get('/product/show/{product}', [ProductController::class, 'show']);
-Route::post('/product/edit', [ProductController::class, 'edit']);
-Route::post('/product/update/{product}', [ProductController::class, 'update']);
-Route::get('/product/delete/{product}', [ProductController::class, 'delete']);
-Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy']);
-Route::get('/product/search', [ProductController::class, 'search']);
+Route::middleware('auth')->group(function(){
+    // Product routes
+    Route::get('/product', [ProductController::class, 'index']);
+    Route::post('/product/store', [ProductController::class, 'store']);
+    Route::get('/product/show/{product}', [ProductController::class, 'show']);
+    Route::post('/product/edit', [ProductController::class, 'edit']);
+    Route::post('/product/update/{product}', [ProductController::class, 'update']);
+    Route::get('/product/delete/{product}', [ProductController::class, 'delete']);
+    Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy']);
+    Route::get('/product/search', [ProductController::class, 'search']);
+    
+});
+
+// Auth routes
+Route::get('/login', function(){
+    return view('auth.login');
+})->name('login');
