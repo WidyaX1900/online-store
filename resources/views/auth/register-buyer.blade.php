@@ -18,7 +18,7 @@
             <form action="" method="" class="d-flex flex-column mt-4">
                 <div class="mb-4">
                   <label for="name" class="form-label">Your name</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <input type="text" class="form-control" id="name" name="name" maxlength="10">
                 </div>
                 <div class="mb-4">
                   <label for="email" class="form-label">E-mail</label>
