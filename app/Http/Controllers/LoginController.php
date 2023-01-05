@@ -18,7 +18,7 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect('/product');
+            return redirect('/');
         }
 
         return back()->withErrors([
