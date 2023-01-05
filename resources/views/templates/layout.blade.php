@@ -36,8 +36,18 @@
                 <img src="{{ asset('storage/img/logo-white.png') }}" alt="brand logo" class="d-block mx-auto">
             </div>
             <div class="links mx-auto mt-3">
-                <a href="/product" class="text-decoration-none">
+                <a href="/" class="text-decoration-none">
                     <div class="product link mx-auto d-flex align-items-center">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
+                        <div class="link-label">
+                            Home
+                        </div>
+                    </div>
+                </a>
+                <a href="/product" class="text-decoration-none">
+                    <div class="transaction link mx-auto d-flex align-items-center">
                         <span class="material-symbols-outlined">
                             inventory_2
                         </span>
