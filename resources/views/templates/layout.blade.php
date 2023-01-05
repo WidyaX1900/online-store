@@ -26,7 +26,9 @@
                         shopping_cart
                     </span>
                 </a>
-                <button type="button">Logout</button>
+                <a href="/login/logout" style="font-size: 1.5rem; text-decoration: none;" class="text-light">
+                    Logout
+                </a>
             </div>
         </div>
     </nav>

@@ -30,6 +30,9 @@ Route::middleware('auth')->group(function(){
     Route::delete('/product/destroy/{product}', [ProductController::class, 'destroy']);
     Route::get('/product/search', [ProductController::class, 'search']);
 
+    // Logout
+    Route::get('/login/logout', [LoginController::class, 'logout']);
+
 });
 
 // Auth routes
