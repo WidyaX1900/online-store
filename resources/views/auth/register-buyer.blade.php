@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/register.css">
-    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/bootstrap.css' }}">
+    <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/register.css' }}">
+    <link rel="icon" href="{{ asset('storage/img/logo.png') }}">
 </head>
 <body>
     <section class="container vh-100 d-flex align-items-center justify-content-center">
         <div class="login-form shadow p-4 rounded-4">
             <div class="logo mx-auto">
-                <img src="img/logo.png" alt="brand logo">
+                <img src="{{ asset('storage/img/logo.png') }}" alt="brand logo">
             </div>
             <form action="" method="" class="d-flex flex-column mt-4">
                 <div class="mb-4">
@@ -35,7 +35,7 @@
                 <button type="submit" class="login-button p-2 rounded shadow">Register</button>
             </form>
             <div class="mt-3 mx-auto register-link">
-                <span>Already have an account?</span> <a href="#">Login here</a>
+                <span>Already have an account?</span> <a href="/login">Login here</a>
             </div>
         </div>
     </section>

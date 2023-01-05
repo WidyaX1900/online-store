@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ config('app.url').'/online-store/resources/css/home.css' }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" href="{{ asset('storage/img/logo.png') }}">
+    <script src="{{ config('app.url').'/online-store/resources/js/jquery-3.6.3.min.js' }}"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -32,7 +33,7 @@
         @else
         <div class="cta-buttons">
           <a href="/product" class="nav-link">Login</a>
-          <button type="button">Register</button>
+          <button type="button" class="register-btn">Register</button>
         </div>          
       @endif
     </nav>
@@ -42,7 +43,7 @@
         <a href="/product" class="nav-link">Login</a>
       </div>
       <div class="register-container mb-3">
-        <button type="button">Register</button>
+        <button type="button" class="register-btn">Register</button>
       </div>
     </div>
     <!-- Hero Image -->
@@ -191,4 +192,5 @@
     crossorigin="anonymous"
   ></script>
   <script src="{{ config('app.url').'/online-store/resources/js/home.js' }}"></script>
+  <script src="{{ config('app.url').'/online-store/resources/js/register.js' }}"></script>
 </html>

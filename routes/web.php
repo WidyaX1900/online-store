@@ -41,4 +41,7 @@ Route::middleware('guest')->group(function(){
         return view('auth.login');
     })->name('login');
     Route::post('/login/admin', [LoginController::class, 'admin']);
+    Route::get('/register/buyer', function(){
+        return view('auth.register-buyer');
+    });
 });
