@@ -21,15 +21,24 @@
         <span></span>
         <span></span>
       </div>
-      <div class="cta-buttons">
-        <a href="" class="nav-link">Login</a>
-        <button type="button">Register</button>
-      </div>
+      @if (Auth::user())
+        <div class="cta-buttons">
+          <p style="font-size: 1.5rem;" class="mt-3">
+            <strong>Hi, {{ Auth::user()->name }}</strong>
+          </p>
+          <a href="/product" class="nav-link">Catalogue</a>
+        </div>        
+        @else
+        <div class="cta-buttons">
+          <a href="/product" class="nav-link">Login</a>
+          <button type="button">Register</button>
+        </div>          
+      @endif
     </nav>
     <!-- Menu links -->
     <div class="menu-link">
       <div class="login-container mb-4">
-        <a href="" class="nav-link">Login</a>
+        <a href="/product" class="nav-link">Login</a>
       </div>
       <div class="register-container mb-3">
         <button type="button">Register</button>
