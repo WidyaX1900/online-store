@@ -28,7 +28,7 @@
             <strong>Hi, {{ Auth::user()->name }}</strong>
           </p>
           <a href="/product" class="nav-link">Catalogue</a>
-          <a href="/login/logout" class="nav-link">Logout</a>
+          <a href="/logout" class="nav-link">Logout</a>
         </div>        
         @else
         <div class="cta-buttons">

@@ -12,10 +12,15 @@
 <body>
     <section class="container vh-100 d-flex align-items-center justify-content-center">
         <div class="login-form shadow p-4 rounded-4">
+            @if (session()->has('registered'))
+                <div class="alert alert-success">
+                    {{ session()->get('registered') }}
+                </div>
+            @endif
             <div class="logo mx-auto">
                 <img src="{{ asset('storage/img/logo.png') }}" alt="brand logo">
             </div>
-            <form action="/login/admin" method="post" class="d-flex flex-column mt-4">
+            <form action="/login" method="post" class="d-flex flex-column mt-4">
                 @csrf
                 <div class="mb-4">
                   <label for="email" class="form-label">Email address  </label>
@@ -39,7 +44,7 @@
                 <button type="submit" class="login-button p-2 rounded shadow">Login</button>
             </form>
             <div class="mt-5 mx-auto register-link">
-                <span>Don't have an account?</span> <a href="#">Register here</a>
+                <span>Don't have an account?</span> <a href="/register/buyer">Register here</a>
             </div>
         </div>
     </section>

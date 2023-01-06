@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,7 +32,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/product/search', [ProductController::class, 'search']);
 
     // Logout
-    Route::get('/login/logout', [LoginController::class, 'logout']);
+    Route::get('/logout', [LoginController::class, 'logout']);
 
 });
 
@@ -40,8 +41,9 @@ Route::middleware('guest')->group(function(){
     Route::get('/login', function(){
         return view('auth.login');
     })->name('login');
-    Route::post('/login/admin', [LoginController::class, 'admin']);
+    Route::post('/login', [LoginController::class, 'login']);
     Route::get('/register/buyer', function(){
         return view('auth.register-buyer');
     });
+    Route::post('/register/buyer', [RegisterController::class, 'buyer']);
 });
