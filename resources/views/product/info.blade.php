@@ -19,24 +19,30 @@
                         echo ucwords($product->category->name);
                     @endphp
                 </p>
-                <p>Stock: {{ $product->qty }}</p>
-                <p>
-                    <strong>Purchase amount</strong>
-                </p>
-                <div class="col-lg-7 mb-5">
-                    <select class="form-select" aria-label="Default select example">
-                        @for ($i = 1; $i <= $product->qty; $i++)
-                            <option value="{{ $i }}">{{ $i }}</option>
-                        @endfor
-                    </select>
-                </div>
-                <button type="button">Buy Now</button>
-                <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal">
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                    </span>
-                    Add to cart
-                </button>
+                @if ($product->qty === 0)
+                    <p class="text-danger">
+                        <strong>Out of stock</strong>
+                    </p>
+                @else
+                    <p>Stock: {{ $product->qty }}</p>
+                    <p>
+                        <strong>Purchase amount</strong>
+                    </p>
+                    <div class="col-lg-7 mb-5">
+                        <select class="form-select" aria-label="Default select example" id="purchase-amount">
+                            @for ($i = 1; $i <= $product->qty; $i++)
+                                <option value="{{ $i }}">{{ $i }}</option>
+                            @endfor
+                        </select>
+                    </div>
+                    <button type="button">Buy Now</button>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#cartModal" id="cart-button">
+                        <span class="material-symbols-outlined">
+                            shopping_cart
+                        </span>
+                        Add to cart
+                    </button>                    
+                @endif
             </div>
         </div>
         <!-- Modal -->
@@ -48,7 +54,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div id="cart-form">
-                    <form action="" method="post">
+                    <form action="/cart/store" method="post">
                         @csrf
                         <input type="hidden" name="product_id" id="product_id" value="{{ $product->id }}">
                         <input type="hidden" name="buyer_id" id="buyer_id" value="{{ Auth::user()->id }}">
