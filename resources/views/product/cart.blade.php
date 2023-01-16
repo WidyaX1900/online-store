@@ -46,7 +46,7 @@
             <div class="checkout shadow rounded-4 position-fixed p-4">
                 <h3>Total cost</h3>
                 <p>
-                    <strong>Rp 360.000</strong>
+                    <strong>Rp {{ $total }}</strong>
                 </p>
                 <button type="button" class="p-3">Pay Now</button>
             </div>

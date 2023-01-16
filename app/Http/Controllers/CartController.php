@@ -43,7 +43,15 @@ class CartController extends Controller
                 ->where('buyer_id', Auth::user()->id)                
                 ->get();
         
+        $totalCost = [];
 
-        return view('product.cart', ['carts' => $carts]);   
+        foreach($carts as $cart){
+
+            $totalCost[] = $cart->cost;
+        }        
+        
+        $totalCost = array_sum($totalCost);
+        
+        return view('product.cart', ['carts' => $carts, 'total' => $totalCost]);   
     }
 }
